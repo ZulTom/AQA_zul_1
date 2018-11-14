@@ -1,0 +1,194 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" routerLink="/admin">Department of Enviroment</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/admin">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/add_user">Profile</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a routerLink="/index">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-secondary sidebar">
+      <div class="list-group">
+        <a routerLink="/add" class="list-group-item list-group-item-dark list-group-item-action"><span class="fa fa-fw fa-dashboard"></span> Dashboard</a>
+        <a routerLink="/search" class="list-group-item list-group-item-dark list-group-item-action"><span class="fa fa-fw fa-dashboard"></span> Search </a>
+         <a routerLink="/add" class="list-group-item list-group-item-dark list-group-item-action active"><span class="fa fa-fw fa-dashboard"></span> Add </a>
+         <a routerLink="/edit" class="list-group-item list-group-item-dark list-group-item-action"><span class="fa fa-fw fa-dashboard"></span> Edit </a>
+         <a routerLink="/delete" class="list-group-item list-group-item-dark list-group-item-action"><span class="fa fa-fw fa-dashboard"></span> Delete </a>
+      </div>
+
+    </nav>
+
+    <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+      <h1><font color="white">Dashboard</font></h1>
+
+      <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+           
+      <h2>Add reading</h2>
+      
+      <h2>Results</h2>
+      <div class="table-responsive">
+        <table class="table table-hover table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th>#</th>
+              <th>District</th>
+              <th>PSI</th>
+              <th>Quality Index</th>
+              <th>Date</th>
+              <th>Comments</th>
+              
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td><select class="form-control-sm" id="sel1">
+                      <option>Brunei Muara</option>
+                      <option>Tutong</option>
+                      <option>Belait</option>
+                      <option>Temburong</option>
+                    </select></td>
+              <td><input type="number" id="PSI_Value" class="form-control-sm" placeholder="PSI Value"></td>
+              <td><select class="form-control-sm" id="sel1">
+                      <option>GOOD</option>
+                      <option>MODERATE</option>
+                      <option>UNHEALTHY FOR SENSITIVE</option>
+                      <option>UNHEALTHY</option>
+                      <option>VERY UNHEALTHY</option>
+                      <option>HAZARDOUS</option>
+                    </select></td>
+              <td><input type="date" class="form-control-sm" name="recorded_on"></td>
+              <td><input type="text" class="form-control" id="comments" placeholder="comments"></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><select class="form-control-sm" id="sel1">
+                      <option>Brunei Muara</option>
+                      <option>Tutong</option>
+                      <option>Belait</option>
+                      <option>Temburong</option>
+                    </select></td>
+              <td><input type="number" id="PSI_Value" class="form-control-sm" placeholder="PSI Value"></td>
+              <td><select class="form-control-sm" id="sel1">
+                      <option>GOOD</option>
+                      <option>MODERATE</option>
+                      <option>UNHEALTHY FOR SENSITIVE</option>
+                      <option>UNHEALTHY</option>
+                      <option>VERY UNHEALTHY</option>
+                      <option>HAZARDOUS</option>
+                    </select></td>
+              <td><input type="date" class="form-control-sm" name="recorded_on"></td>
+              <td><input type="text" class="form-control" id="comments" placeholder="comments"></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><select class="form-control-sm" id="sel1">
+                      <option>Brunei Muara</option>
+                      <option>Tutong</option>
+                      <option>Belait</option>
+                      <option>Temburong</option>
+                    </select></td>
+              <td><input type="number" id="PSI_Value" class="form-control-sm" placeholder="PSI Value"></td>
+              <td><select class="form-control-sm" id="sel1">
+                      <option>GOOD</option>
+                      <option>MODERATE</option>
+                      <option>UNHEALTHY FOR SENSITIVE</option>
+                      <option>UNHEALTHY</option>
+                      <option>VERY UNHEALTHY</option>
+                      <option>HAZARDOUS</option>
+                    </select></td>
+              <td><input type="date" class="form-control-sm" name="recorded_on"></td>
+              <td><input type="text" class="form-control" id="comments" placeholder="comments"></td>
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><select class="form-control-sm" id="sel1">
+                      <option>Brunei Muara</option>
+                      <option>Tutong</option>
+                      <option>Belait</option>
+                      <option>Temburong</option>
+                    </select></td>
+              <td><input type="number" id="PSI_Value" class="form-control-sm" placeholder="PSI Value"></td>
+              <td><select class="form-control-sm" id="sel1">
+                      <option>GOOD</option>
+                      <option>MODERATE</option>
+                      <option>UNHEALTHY FOR SENSITIVE</option>
+                      <option>UNHEALTHY</option>
+                      <option>VERY UNHEALTHY</option>
+                      <option>HAZARDOUS</option>
+                    </select></td>
+              <td><input type="date" class="form-control-sm" name="recorded_on"></td>
+              <td><input type="text" class="form-control" id="comments" placeholder="comments"></td>
+              
+            </tr>
+            <tr>
+              <td>1</td>
+              <td><select class="form-control-sm" id="sel1">
+                      <option>Brunei Muara</option>
+                      <option>Tutong</option>
+                      <option>Belait</option>
+                      <option>Temburong</option>
+                    </select></td>
+              <td><input type="number" id="PSI_Value" class="form-control-sm" placeholder="PSI Value"></td>
+              <td><select class="form-control-sm" id="sel1">
+                      <option>GOOD</option>
+                      <option>MODERATE</option>
+                      <option>UNHEALTHY FOR SENSITIVE</option>
+                      <option>UNHEALTHY</option>
+                      <option>VERY UNHEALTHY</option>
+                      <option>HAZARDOUS</option>
+                    </select></td>
+              <td><input type="date" class="form-control-sm" name="recorded_on"></td>
+              <td><input type="text" class="form-control" id="comments" placeholder="comments"></td>
+              
+            </tr>
+          </tbody>
+          <button type="submit" class="btn btn-primary">Add</button>
+        </table>
+      </div>
+    </main>
+  </div>
+</div>
+<script type="text/javascript">$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})</script>

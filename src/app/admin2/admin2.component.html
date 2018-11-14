@@ -1,0 +1,211 @@
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" routerLink="/admin">Department of Enviroment</a>
+    <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" routerLink="/admin">Home <span class="sr-only">(current)</span></a>
+        </li>
+  
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/add_user">Profile</a>
+        </li>
+      </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/index">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-sm-3 col-md-2 d-none d-sm-block bg-secondary sidebar">
+      <div class="list-group">
+        <a routerLink="/admin" class="list-group-item list-group-item-dark list-group-item-action active"><span class="fa fa-fw fa-dashboard"></span> Dashboard</a>
+        <a routerLink="/search"  class="list-group-item list-group-item-dark list-group-item-action"><span class="fa fa-fw fa-dashboard"></span> Search </a>
+         <a routerLink="/add" class="list-group-item list-group-item-dark list-group-item-action"><span class="fa fa-fw fa-dashboard"></span> Add </a>
+         <a routerLink="/edit" class="list-group-item list-group-item-dark list-group-item-action"><span class="fa fa-fw fa-dashboard"></span> Edit </a>
+         <a routerLink="/delete" class="list-group-item list-group-item-dark list-group-item-action"><span class="fa fa-fw fa-dashboard"></span> Delete</a>
+      </div>
+
+    </nav>
+
+    <main role="main" class="col-sm-9 ml-sm-auto col-md-10 pt-3">
+      <h1><font color="white">Dashboard</font></h1>
+
+      <section class="row text-center placeholders" *ngFor="let item of data_aq">
+        <div class="col-6 col-sm-3">
+          <div class="card text-black bg-light mb-3">
+            <div class="card-header">{{item.District}}</div>
+            <div class="card-body">
+              <h4 class="card-title">{{item.Value}}</h4>
+              <p class="card-text"></p>
+              
+
+            </div>
+          </div>
+        </div>
+        <!-- <div class="col-6 col-sm-3">
+          <div class="card text-black bg-light mb-3">
+            <div class="card-header">Tutong</div>
+            <div class="card-body">
+              <h4 class="card-title">10</h4>
+              <p class="card-text">GOOD</p>
+              
+
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-3">
+          <div class="card text-black bg-light mb-3">
+            <div class="card-header">Belait</div>
+            <div class="card-body">
+              <h4 class="card-title">12</h4>
+              <p class="card-text">GOOD</p>
+              
+
+            </div>
+          </div>
+        </div>
+        <div class="col-6 col-sm-3">
+          <div class="card text-black bg-light mb-3">
+            <div class="card-header">Temburong</div>
+            <div class="card-body">
+              <h4 class="card-title">10</h4>
+              <p class="card-text">GOOD</p>
+              
+
+            </div>
+          </div>
+        </div> -->
+      </section>
+
+      <!-- Button trigger modal -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+      
+      
+      
+      <!--insert of -->
+      <h2>Insert Today's Readings</h2>
+      <div class="table-responsive">
+        <!-- {{ adminForm.value | json }}
+        {{diagnostic}} -->
+        <form [formGroup]="todayForm" (ngSubmit)="addreading()"> >
+          <!-- <form [formGroup]="registerForm" (ngSubmit)="onSubmit()"> -->
+         
+        <table class="table table-hover table-bordered">
+          <thead class="thead-dark">
+            <tr>
+              <th>District</th>
+              <th>PSI</th>
+              
+              <th>Date</th>
+  
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><input type="text" formControlName="District" value="Brunei-Muara"></td>
+              <td><input type="number" formControlName="value" class="form-control-sm" placeholder="PSI Value"></td>
+              
+              <td><input type="datetime-local" class="form-control-sm" formControlName="Date"></td>
+              
+              
+            </tr>
+            <input type="submit" name="submit" value="submit">
+          
+
+
+   <!--  <form>
+            <tr>
+              <td><input type="text" name="country" value="Tutong" readonly></td>
+              <td><input type="number" id="PSI_Value" class="form-control-sm" placeholder="PSI Value"></td>
+              
+              <td><input type="date" class="form-control-sm" name="recorded_on"></td>
+              
+              
+            </tr>
+            <tr>
+              <td><input type="text" name="country" value="Belait" readonly></td>
+              <td><input type="number" id="PSI_Value" class="form-control-sm" placeholder="PSI Value"></td>
+              
+              <td><input type="date" class="form-control-sm" name="recorded_on"></td>
+              
+              
+            </tr>
+            <tr>
+              <td><input type="text" name="country" value="Temburong" readonly></td>
+              <td><input type="number" id="PSI_Value" class="form-control-sm" placeholder="PSI Value"></td>
+              
+              <td><input type="date" class="form-control-sm" name="recorded_on"></td>
+              
+              
+            </tr> -->
+          </tbody>
+          <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> -->
+  </table>
+  </form>
+  <!-- <input type="submit" class="btn btn-primary" name="" value="Add">
+
+        
+      </form> -->
+      </div>
+      
+    </main>
+  </div>
+</div>
+<script type="text/javascript">$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+// $(document).ready(function(){
+//         // click on button submit
+//         $("#submit").on('click', function(){
+//             // send ajax
+//             $.ajax({
+//                 url: '/admin.html', // url where to submit the request
+//                 type : "POST", // type of action POST || GET
+//                 dataType : 'json', // data type
+//                 data : $("form-id").serialize(), // post data || get data
+//                 success : function(result) {
+//                     // you can see the result from the console
+//                     // tab of the developer tools
+//                     console.log(result);
+//                 },
+//                 error: function(xhr, resp, text) {
+//                     console.log(xhr, resp, text);
+//                 }
+//             })
+//         });
+//     });
+
+</script>

@@ -1,0 +1,14 @@
+#navbar1 {
+	padding:0px;
+	max-height: auto;
+	position: 	fixed;	
+	position: fixed;
+  		top: 0px;
+  		width: 100%;
+  		padding-left: 0px;
+  		padding-right: 0px;
+}
+
+#navbar2 {
+	padding-top:0px;
+}
